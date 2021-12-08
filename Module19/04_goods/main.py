@@ -24,4 +24,12 @@ store = {
     ],
 }
 
-# TODO здесь писать код
+for key in goods.keys():
+    code = goods[key]
+    count = 0
+    value = 0
+    for i in range(len(store[code])):
+        quant = store[code][i]['quantity']
+        count += quant
+        value += store[code][i]['price'] * quant
+    print(' '.join([key, '-', str(count), 'шт, стоимость', str(value), 'руб']))
