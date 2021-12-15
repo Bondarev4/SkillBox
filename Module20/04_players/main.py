@@ -4,4 +4,7 @@ players = {
     ("Rob", "Bobbin"): (12, 8, 2)
 }
 
-# TODO здесь писать код
+new_arr = []
+for key, value in players.items():
+    new_arr.append(key + value)
+print(new_arr)
