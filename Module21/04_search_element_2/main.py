@@ -1,3 +1,8 @@
+def dict_depth(dic, level=1):
+    if not isinstance(dic, dict) or not dic:
+        return level
+    return max(dict_depth(dic[ke], level + 1) for ke in dic)
+
 def find_key(struct, k, depth):
     if k in struct:
         return struct[k]
@@ -29,6 +34,6 @@ flag_d = input('Хотите ввести максимальную глубин�
 if flag_d == 'y':
     m_depth = int(input('Введите максимальную глубину: '))
     found_k = find_key(site, key, m_depth)
-elif flag_d == 'n':
-    found_k = find_key(site, key, )
+else:
+    found_k = find_key(site, key, dict_depth(site))
 print('Значение ключа: {}'.format(found_k))
