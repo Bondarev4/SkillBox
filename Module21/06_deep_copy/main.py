@@ -1,14 +1,11 @@
-def site_copy(struct, product, new_site):
-    if 'title' == struct:
-        new_site['title'] = 'Куплю/продам {} недорого'.format(product)
-    elif 'h2' == struct:
-        new_site['h2'] = 'У нас самая низкая цена на {}'.format(product)
-    else:
-        new_site[struct] = site[struct]
+def site_copy(struct, product):
+    if 'title' in struct:
+        struct['title'] = 'Куплю/продам {} недорого'.format(product)
+    if 'h2' in struct:
+        struct['h2'] = 'У нас самая низкая цена на {}'.format(product)
     for value in struct.values():
         if isinstance(value, dict):
-            return site_copy(value, product, new_site)
-    return new_site
+            site_copy(value, product)
 
 
 site = {
@@ -27,4 +24,5 @@ n = int(input('Сколько сайтов: '))
 n_site = {}
 for i in range(n):
     name_of_product = input('Введите название продукта для нового сайта: ')
-    print(site, name_of_product, n_site)
+    site_copy(site, name_of_product)
+    print('\nСайт для {}:\n'.format(name_of_product), site)
