@@ -20,9 +20,9 @@ site = {
         }
     }
 }
-n = int(input('Сколько сайтов: '))
-n_site = {}
-for i in range(n):
-    name_of_product = input('Введите название продукта для нового сайта: ')
-    site_copy(site, name_of_product)
-    print('\nСайт для {}:\n'.format(name_of_product), site)
+# n = int(input('Сколько сайтов: '))
+# n_site = {}
+# for i in range(n):
+#     name_of_product = input('Введите название продукта для нового сайта: ')
+#     site_copy(site, name_of_product)
+#     print('\nСайт для {}:\n'.format(name_of_product), site)
