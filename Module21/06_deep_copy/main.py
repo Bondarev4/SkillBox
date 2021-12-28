@@ -7,6 +7,14 @@ def site_copy(struct, product):
         if isinstance(value, dict):
             site_copy(value, product)
 
+def s_p(struct, i=1):
+    for k, v in struct.items():
+        if isinstance(v, dict):
+            print("{}'{}': ".format('\t'*i, k))
+            s_p(v, i + 1)
+        else:
+            print("{}'{}': '{}'".format('\t'*(i+1), k, v))
+
 
 site = {
     'html': {
@@ -21,8 +29,12 @@ site = {
     }
 }
 # n = int(input('Сколько сайтов: '))
-# n_site = {}
+# n_sites = {}
 # for i in range(n):
-#     name_of_product = input('Введите название продукта для нового сайта: ')
+#     name_of_product = input('\nВведите название продукта для нового сайта: ')
 #     site_copy(site, name_of_product)
-#     print('\nСайт для {}:\n'.format(name_of_product), site)
+#     n_sites[name_of_product] = site
+#     for key, value in n_sites.items():
+#         print('Сайт для {}:\nsite ='.format(key))
+#         s_p(value)
+
