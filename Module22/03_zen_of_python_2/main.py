@@ -4,15 +4,15 @@ def m_l(text):
     letters_list = list()
     al = ''
     min_c = 0
-    for symb in text:
-        if symb.isalpha():
-            symb = symb.lower()
-            if symb not in letters_list:
-                c_s = text.count(symb)
+    for sym in text:
+        if sym.isalpha():
+            sym = sym.lower()
+            if sym not in letters_list:
+                c_s = text.count(sym)
                 if c_s < min_c or min_c == 0:
-                    al = symb
-                    max_c = c_s
-                letters_list.append(symb)
+                    al = sym
+                    min_c = c_s
+                letters_list.append(sym)
     return al
 
 
