@@ -15,7 +15,7 @@ def calculate(directory, size=0, catalogs=0, files=0):
             size += os.path.getsize(path_el)
             files += 1
     return size, catalogs, files
-# C:\SkillBox\pythonProject\Python_Basic\Module14
+
 
 path = input('Пожалуйста, введите путь до директории: ')
 s_size, s_catalogs, s_files = calculate(path)
