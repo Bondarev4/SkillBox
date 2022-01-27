@@ -5,7 +5,7 @@ s = 0
 try:
     with open('lucky_number.txt', 'w+') as file:
         while s < 777:
-            if random.randint(1, 6) == 4:
+            if random.randint(1, 13) == 13:
                 raise TypeError
             number = int(input('Введите число: '))
             s += number
@@ -13,20 +13,20 @@ try:
 
 except TypeError:
     print('Вас постигла неудача!')
-    with open('lucky_number.txt', 'r+') as file_1:
-        print('----------')
-        count_lines = file_1.read().count('\n')
-        if count_lines != 0:
-            unlucky_line = random.randint(0, count_lines - 1)
-
-            lines_list = file_1.readlines()
-            print(lines_list)
-            # lines_list[] = '\n'
-            print(lines_list)
-            print('----------')
-            # file.writelines(lines_list)
+    file_1 = open('lucky_number.txt', 'r+')
+    count_lines = file_1.read().count('\n')
+    if count_lines != 0:
+        unlucky_line = random.randint(0, count_lines - 1)
+        file_2 = open('lucky_number.txt', 'r')
+        lines_list = file_2.readlines()
+        lines_list[unlucky_line] = '\n'
+        file_3 = open('lucky_number.txt', 'w')
+        file_3.writelines(lines_list)
+        file_2.close()
+        file_3.close()
+    file_1.close()
 
 finally:
-    with open('lucky_number.txt', 'r') as file_2:
+    with open('lucky_number.txt', 'r') as file_4:
         print('\nСодержимое файла out_file.txt:')
-        print(file_2.read())
+        print(file_4.read())
