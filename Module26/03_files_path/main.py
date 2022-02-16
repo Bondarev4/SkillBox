@@ -23,5 +23,5 @@ if directory == '0':
 for i in gen_files_path(your_catalog, directory):
     pass
 
-# При проходе по корневому диску [WinError 5] Отказано в доступе: 'C:\\$Recycle.Bin\\S-1-5-18'.
-# Так и не понял как решить проблему.
+# При проходе по корневому диску [WinError 5] Отказано в доступе: 'C:\\$Recycle.Bin\\S-1-5-18'
+# PermissionError: [WinError 5] Отказано в доступе: 'C:\\AdwCleaner'.
